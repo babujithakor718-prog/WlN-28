@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WIN 28 - Landing Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    /* Glow animation */
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+      50% { box-shadow: 0 0 30px rgba(255,255,255,1); }
+    }
+    .glow {
+      animation: glowPulse 2s infinite ease-in-out;
+    }
+    .frame-section {
+      background: #1f2937;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+      padding: 3rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background: linear-gradient(to right, #22c55e, #16a34a);
+      color: white;
+      padding: 14px 20px;
+      font-weight: bold;
+      border-radius: 999px;
+      animation: glowPulse 2s infinite ease-in-out;
+      transition: transform 0.3s ease;
+    }
+    .floating-btn:hover { transform: scale(1.08); }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Hero Section -->
+  <section class="py-6 px-4 bg-gradient-to-r from-purple-700 to-indigo-800">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex gap-3 flex-wrap order-2 md:order-1 text-sm">
+        <button onclick="downloadAPK()" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-xl shadow-md font-medium text-sm glow">Download</button>
+        <button onclick="downloadAPK()" class="bg-yellow-400 hover:bg-yellow-500 text-black px-4 py-2 rounded-xl shadow-md font-medium text-sm glow">Sign Up ₹10</button>
+      </div>
+      <div class="order-1 md:order-2 text-center md:text-right">
+        <img src="https://i.ibb.co/8nvR41B8/20250911-211542.png" alt="Win 28 Logo" class="w-24 h-24 rounded-full border-4 border-white mx-auto md:mx-0 glow" />
+        <h1 class="text-2xl md:text-4xl font-bold mt-2">🎗 WIN 28 💸</h1>
+        <p class="text-sm md:text-lg mt-1">Free Fire Tournament – Battle, Win, Earn!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="max-w-5xl mx-auto frame-section">
+    <h2 class="text-3xl font-bold text-center mb-10">Why Choose WIN 28?</h2>
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="p-6 bg-gray-800 rounded-2xl shadow-md glow">
+        <h3 class="text-xl font-semibold mb-2">⚡ Instant Rewards</h3>
+        <p>Get instant sign-up bonus and daily rewards just for playing.</p>
+      </div>
+      <div class="p-6 bg-gray-800 rounded-2xl shadow-md glow">
+        <h3 class="text-xl font-semibold mb-2">👥 Refer & Earn</h3>
+        <p>Invite friends & earn ₹5 per referral directly to your wallet.</p>
+      </div>
+      <div class="p-6 bg-gray-800 rounded-2xl shadow-md glow">
+        <h3 class="text-xl font-semibold mb-2">💳 Secure Payments</h3>
+        <p>Withdraw easily via PhonePe, GPay & Paytm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Preview Section (Slider Without iPhone Frame) -->
+  <section class="max-w-5xl mx-auto frame-section">
+    <h2 class="text-3xl font-bold text-center mb-10">📍App Preview</h2>
+    <div class="swiper mySwiper w-[300px] md:w-[400px] lg:w-[500px] rounded-2xl shadow-lg">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://i.ibb.co/gFBGhMLZ/Picsart-25-09-14-22-57-00-996-removebg-preview.png" class="w-full h-full object-cover rounded-2xl" />
+        </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="max-w-3xl mx-auto frame-section">
+    <h2 class="text-3xl font-bold text-center text-yellow-400 mb-10">❓ Frequently Asked Questions</h2>
+    <div class="space-y-4">
+      <div class="bg-gray-800 rounded-xl shadow-md border border-gray-700 glow">
+        <button onclick="toggleFAQ(1)" class="w-full flex justify-between items-center p-4 text-left">
+          <span class="font-semibold">💰 How do I withdraw my winnings?</span>
+          <span id="icon1">+</span>
+        </button>
+        <div id="faq1" class="hidden px-4 pb-4 text-gray-300">
+          You can easily withdraw via <b>PhonePe, GPay or Paytm</b> with instant transfer.
+        </div>
+      </div>
+      <div class="bg-gray-800 rounded-xl shadow-md border border-gray-700 glow">
+        <button onclick="toggleFAQ(2)" class="w-full flex justify-between items-center p-4 text-left">
+          <span class="font-semibold">🤑 How does the referral bonus work?</span>
+          <span id="icon2">+</span>
+        </button>
+        <div id="faq2" class="hidden px-4 pb-4 text-gray-300">
+          Invite your friends and earn <b>₹5 per referral</b> directly into your wallet.
+        </div>
+      </div>
+      <div class="bg-gray-800 rounded-xl shadow-md border border-gray-700 glow">
+        <button onclick="toggleFAQ(3)" class="w-full flex justify-between items-center p-4 text-left">
+          <span class="font-semibold">⚡ Is WIN 28 safe & legal?</span>
+          <span id="icon3">+</span>
+        </button>
+        <div id="faq3" class="hidden px-4 pb-4 text-gray-300">
+          Yes ✅ Our platform is 100% safe & legal with secure transactions.
+        </div>
+      </div>
+      <div class="bg-gray-800 rounded-xl shadow-md border border-gray-700 glow">
+        <button onclick="toggleFAQ(4)" class="w-full flex justify-between items-center p-4 text-left">
+          <span class="font-semibold">🎮 How do I join a tournament?</span>
+          <span id="icon4">+</span>
+        </button>
+        <div id="faq4" class="hidden px-4 pb-4 text-gray-300">
+          Simply download the app, register, and choose a tournament from the dashboard.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="max-w-3xl mx-auto frame-section text-center">
+    <h2 class="text-3xl font-bold mb-6">📞 Contact Us</h2>
+    <p class="mb-4">Have questions? Reach us anytime.</p>
+    <p class="font-semibold">Call / WhatsApp: <span class="text-yellow-400">9974911460</span></p>
+  </section>
+
+  <footer class="bg-gray-950 py-6 text-center text-gray-400">
+    <p>© 2025 WIN 28. All rights reserved.</p>
+  </footer>
+
+  <button class="floating-btn" onclick="downloadAPK()">⬇ Download Now</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      pagination: { el: ".swiper-pagination", clickable: true },
+      autoplay: { delay: 3000, disableOnInteraction: false }
+    });
+
+    function toggleFAQ(id) {
+      const content = document.getElementById("faq" + id);
+      const icon = document.getElementById("icon" + id);
+      if (content.classList.contains("hidden")) {
+        content.classList.remove("hidden");
+        icon.innerHTML = "−";
+      } else {
+        content.classList.add("hidden");
+        icon.innerHTML = "+";
+      }
+    }
+
+    function downloadAPK() {
+      const link = document.createElement('a');
+      link.href = "https://ga-fs.primexop.com/11173/androidBuilds/wln-28V1.apk";
+      link.setAttribute('download', 'wln-28V1.apk');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
